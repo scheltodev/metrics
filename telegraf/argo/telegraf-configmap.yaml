@@ -16,8 +16,7 @@ data:
     [[inputs.kubernetes]]
       url = "https://${KUBERNETES_SERVICE_HOST}:${KUBERNETES_SERVICE_PORT}"
       bearer_token = "/var/run/secrets/kubernetes.io/serviceaccount/token"
-      kubernetes_url = "https://${KUBERNETES_SERVICE_HOST}:${KUBERNETES_SERVICE_PORT}"
-      fieldpass = ["cpu_usage", "memory_usage", "network", "disk"]
+      fieldinclude = ["cpu_usage", "memory_usage", "network", "disk"]
 
     [[inputs.cpu]]
       percpu = true
