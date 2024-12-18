@@ -33,8 +33,12 @@ spec:
   selector:
     app: telegraf
   ports:
-    - port: 8125
+    - name: telegraf-udp # Portname für den ersten Port
+      port: 8125
       targetPort: 8125
-    - port: 8092
+      protocol: UDP # Beispielprotokoll, falls UDP benötigt wird
+    - name: telegraf-tcp # Portname für den zweiten Port
+      port: 8092
       targetPort: 8092
+      protocol: TCP # Beispielprotokoll für TCP
   type: ClusterIP
