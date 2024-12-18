@@ -33,3 +33,8 @@ data:
 
     [[inputs.net]]
       interfaces = ["eth0", "lo"]
+
+    [[inputs.system]]
+      ## CPU Temp on Linux will use the value in /sys/class/thermal/thermal_zone0/temp
+      ## The value is in millidegrees Celsius, so divide by 1000 to get Celsius.
+      fieldpass = ["temperature"]
