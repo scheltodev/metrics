@@ -16,22 +16,16 @@ spec:
     spec:
       containers:
         - name: influxdb
-          image: influxdb:2.0
+          image: influxdb:1.8 # InfluxDB 1.x Version (z.B. 1.8)
           ports:
             - containerPort: 8086
           env:
+            - name: INFLUXDB_DB
+              value: 'telegraf'
             - name: INFLUXDB_ADMIN_USER
-              value: 'schelto' # Benutzername
+              value: 'admin' # Benutzername
             - name: INFLUXDB_ADMIN_PASSWORD
               value: 'your-password' # Passwort
-            - name: INFLUXDB_ORG
-              value: 'scheltoorg' # Organisation
-            - name: INFLUXDB_BUCKET
-              value: 'telegraf' # Bucket
-            - name: INFLUXDB_RETENTION
-              value: '0' # Aufbewahrungsdauer (0 = unendlich)
-            - name: INFLUXDB_SETUP
-              value: 'true' # Setup-Flag, das die Initialisierung ausführt
 ---
 apiVersion: v1
 kind: Service
