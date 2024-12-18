@@ -25,8 +25,8 @@ data:
       collect_cpu_time = false
 
     [[inputs.mem]]
-      mem = true
-      swap = true
+      #mem = true
+      #swap = true
 
     [[inputs.disk]]
       mount_points = ["/", "/mnt"]
